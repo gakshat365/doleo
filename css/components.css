@@ -1,0 +1,108 @@
+/* ═══════════════════════════════
+   CTA BUTTON
+═══════════════════════════════ */
+.cta-btn {
+  padding: 14px 36px;
+  border-radius: 999px;
+  border: none;
+  background: var(--btn-yes);
+  color: #fff;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all var(--transition);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+.cta-btn:hover { transform: scale(1.07); box-shadow: 0 8px 30px rgba(0,0,0,0.4); }
+.pulse-anim { animation: pulse-glow 2s infinite; }
+
+.yes-btn {
+  padding: 14px 32px;
+  border-radius: 999px;
+  border: none;
+  background: var(--btn-yes);
+  color: #fff;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all var(--transition);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+.yes-btn:hover { transform: scale(1.08); }
+
+.no-btn {
+  padding: 12px 28px;
+  border-radius: 999px;
+  border: 1.5px solid var(--btn-no-border);
+  background: rgba(255,255,255,0.05);
+  color: var(--btn-no-text);
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.no-btn:hover { border-color: var(--accent2); }
+
+.back-btn {
+  margin-top: 14px;
+  background: none;
+  border: 1px solid var(--glass-border);
+  color: var(--text-muted);
+  padding: 8px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: var(--font-main);
+  font-size: 0.85rem;
+  transition: all var(--transition);
+}
+.back-btn:hover { border-color: var(--accent); color: var(--text); }
+
+/* ── Game shared ── */
+.game-wrapper {
+  max-width: 520px;
+  width: 100%;
+  padding: 28px 22px;
+  text-align: center;
+  border-radius: var(--radius);
+}
+.game-title {
+  font-family: var(--font-alt);
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.game-instructions {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 14px;
+}
+.game-instructions kbd {
+  background: rgba(255,255,255,0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+.game-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
+}
+.game-overlay p {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  white-space: pre-line;
+}
+.rps-end { margin-top: 16px; }
+.rps-end p { font-size: 1.1rem; margin-bottom: 16px; color: var(--accent); font-weight: 700; }

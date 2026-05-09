@@ -1,0 +1,64 @@
+/* ═══════════════════════════════
+   THEME: VALENTINES (default)
+═══════════════════════════════ */
+body.valentines {
+  --bg1: #1a0012;
+  --bg2: #3d0026;
+  --accent: #ff4d88;
+  --accent2: #ff8fb1;
+  --accent3: #ffb3c6;
+  --glass-bg: rgba(255, 77, 136, 0.08);
+  --glass-border: rgba(255, 77, 136, 0.25);
+  --text: #ffe0eb;
+  --text-muted: #d6a0b5;
+  --btn-yes: linear-gradient(135deg, #ff4d88, #ff8fb1);
+  --btn-no-border: rgba(255, 77, 136, 0.3);
+  --btn-no-text: #d6a0b5;
+  --shadow: 0 8px 40px rgba(255, 77, 136, 0.3);
+  --font-main: 'Quicksand', sans-serif;
+  --font-alt: 'Dancing Script', cursive;
+}
+
+/* ═══════════════════════════════
+   THEME: K-POP
+═══════════════════════════════ */
+body.kpop {
+  --bg1: #0d001f;
+  --bg2: #1a0040;
+  --accent: #c77dff;
+  --accent2: #9d4edd;
+  --accent3: #e0aaff;
+  --glass-bg: rgba(157, 78, 221, 0.10);
+  --glass-border: rgba(199, 125, 255, 0.25);
+  --text: #f0e6ff;
+  --text-muted: #c7a8ef;
+  --btn-yes: linear-gradient(135deg, #c77dff, #9d4edd);
+  --btn-no-border: rgba(199, 125, 255, 0.3);
+  --btn-no-text: #c7a8ef;
+  --shadow: 0 8px 40px rgba(157, 78, 221, 0.35);
+  --font-main: 'Quicksand', sans-serif;
+  --font-alt: 'Nanum Myeongjo', serif;
+}
+
+/* ═══════════════════════════════
+   THEME: GOTHIC
+   Palette: jet black bg, deep indigo shadow, blood crimson +
+   violet accent, bone-white text, eerie silver-purple glow.
+═══════════════════════════════ */
+body.gothic {
+  --bg1: #000000;           /* pure jet black */
+  --bg2: #0d0015;           /* deep midnight indigo */
+  --accent: #c0002a;        /* blood crimson */
+  --accent2: #7b00cc;       /* dark violet / amethyst */
+  --accent3: #d4b8ff;       /* pale lilac — highlights */
+  --glass-bg: rgba(60, 0, 90, 0.12);          /* deep violet tint */
+  --glass-border: rgba(160, 80, 255, 0.22);   /* violet-silver edge */
+  --text: #e8e0f0;          /* bone white with violet tint */
+  --text-muted: #9a88b0;    /* muted silver-lavender */
+  --btn-yes: linear-gradient(135deg, #c0002a, #7b00cc); /* blood → violet */
+  --btn-no-border: rgba(160, 80, 255, 0.3);
+  --btn-no-text: #9a88b0;
+  --shadow: 0 8px 50px rgba(123, 0, 204, 0.45), 0 2px 12px rgba(192, 0, 42, 0.3);
+  --font-main: 'Quicksand', sans-serif;
+  --font-alt: 'Cinzel', serif;
+}

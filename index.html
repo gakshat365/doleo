@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Will You Forgive Me? 💌</title>
+  <meta name="description" content="A playful, interactive forgiveness website with themes, games and love." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Nanum+Myeongjo:wght@400;700&family=Cinzel:wght@400;600&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- tsParticles -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/themes.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/screens.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body class="valentines">
+
+<!-- Particles layer -->
+<div id="tsparticles"></div>
+
+<!-- ── SCREEN 1: Spinner Wheel ── -->
+<div id="screen-theme" class="screen active">
+  <div class="spinner-card glass">
+    <h1 class="spinner-title">Spin for Your Vibe 🎡</h1>
+    <p class="spinner-sub">Let fate pick your mood…</p>
+
+    <!-- Wheel + pointer + centre spin button -->
+    <div class="wheel-wrap">
+      <div class="wheel-pointer-arrow">▼</div>
+      <canvas id="wheel-canvas" width="280" height="280"></canvas>
+      <button id="btn-spin" class="spin-center-btn">SPIN</button>
+    </div>
+
+    <!-- Result label -->
+    <p id="spin-result" class="spin-result-text">Give it a spin! 🎡</p>
+
+    <!-- Continue (disabled until spun) -->
+    <button id="btn-choose-theme" class="cta-btn continue-spin-btn" disabled>Continue ✨</button>
+  </div>
+</div>
+
+<!-- ── SCREEN 2: Forgiveness Ask ── -->
+<div id="screen-forgive" class="screen">
+  <div class="forgive-card glass">
+    <div class="sad-face" id="sad-emoji">🥺</div>
+    <h1 id="forgive-question">Will you forgive me?</h1>
+    <p id="forgive-sub" class="forgive-sub-msg">I messed up &amp; I know it... 💔</p>
+    <div class="forgive-btn-row" id="forgive-btn-row">
+      <button id="btn-yes" class="yes-btn">Yes 💗</button>
+      <button id="btn-no" class="no-btn">No 🙅</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── SCREEN 3: Game Hub ── -->
+<div id="screen-games" class="screen">
+  <div class="games-card glass">
+    <h1>Wanna still click no?<br/><span class="accent-text">Let's play a game 🎮</span></h1>
+    <p class="games-sub">You won't win. I promise 😏</p>
+    <div class="game-options">
+      <button class="game-select-btn" data-game="flappy" id="game-btn-flappy">
+        <span class="game-icon">🐦</span><span>Flappy Bird</span>
+      </button>
+      <button class="game-select-btn" data-game="rps" id="game-btn-rps">
+        <span class="game-icon">✂️</span><span>Rock Paper Scissors</span>
+      </button>
+      <button class="game-select-btn" data-game="whack" id="game-btn-whack">
+        <span class="game-icon">🔨</span><span>Whack-a-Heart</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ── SCREEN 4a: Flappy Bird ── -->
+<div id="screen-flappy" class="screen">
+  <div class="game-wrapper glass">
+    <h2 class="game-title" id="flappy-title">🐦 Flappy Feelings</h2>
+    <p class="game-instructions">Press <kbd>Space</kbd> / Tap to flap. Reach 10 to "win" 😈</p>
+    <div class="canvas-wrap">
+      <canvas id="flappy-canvas" width="400" height="460"></canvas>
+      <div id="flappy-overlay" class="game-overlay">
+        <p id="flappy-overlay-msg">Tap / Press Space to Start</p>
+        <button id="flappy-start-btn" class="cta-btn">Start 🐦</button>
+      </div>
+    </div>
+    <div id="flappy-score-bar">Score: <span id="flappy-score">0</span></div>
+    <button class="back-btn" id="flappy-back">← Back to games</button>
+  </div>
+</div>
+
+<!-- ── SCREEN 4b: Rock Paper Scissors ── -->
+<div id="screen-rps" class="screen">
+  <div class="game-wrapper glass">
+    <h2 class="game-title">✂️ Rock Paper Scissors</h2>
+    <p class="game-instructions">5 rounds. You can't win 😌</p>
+    <div id="rps-scoreboard">
+      <span>You: <b id="rps-user-score">0</b></span>
+      <span>Round <b id="rps-round">1</b>/5</span>
+      <span>Me: <b id="rps-cpu-score">0</b></span>
+    </div>
+    <div id="rps-arena">
+      <div class="rps-side">
+        <div id="rps-user-choice" class="rps-choice-display">❓</div>
+        <p>You</p>
+      </div>
+      <div class="rps-vs">VS</div>
+      <div class="rps-side">
+        <div id="rps-cpu-choice" class="rps-choice-display">❓</div>
+        <p>Me</p>
+      </div>
+    </div>
+    <div id="rps-result-msg" class="rps-result"></div>
+    <div id="rps-cheeky-msg" class="rps-cheeky"></div>
+    <div id="rps-buttons" class="rps-btn-row">
+      <button class="rps-pick-btn" data-pick="rock">🪨<br/>Rock</button>
+      <button class="rps-pick-btn" data-pick="paper">📄<br/>Paper</button>
+      <button class="rps-pick-btn" data-pick="scissors">✂️<br/>Scissors</button>
+    </div>
+    <div id="rps-end" class="rps-end hidden">
+      <p id="rps-end-msg"></p>
+      <button id="rps-forgive-btn" class="cta-btn">Forgive me? 💖</button>
+      <button class="back-btn" id="rps-back">Try another game</button>
+    </div>
+    <button class="back-btn" id="rps-back-top">← Back to games</button>
+  </div>
+</div>
+
+<!-- ── SCREEN 4c: Whack-a-Heart ── -->
+<div id="screen-whack" class="screen">
+  <div class="game-wrapper glass">
+    <h2 class="game-title">🔨 Whack-a-Heart</h2>
+    <p class="game-instructions">Whack 💔 broken hearts — avoid 💖 love hearts! Score 30 to "win" 😈</p>
+    <div id="whack-hud">
+      <span>Score: <b id="whack-score">0</b></span>
+      <span>Time: <b id="whack-timer">30</b>s</span>
+      <span>Lives: <b id="whack-lives">3</b></span>
+    </div>
+    <div id="whack-grid"></div>
+    <div id="whack-overlay" class="game-overlay">
+      <p id="whack-overlay-msg">Whack 💔  Avoid 💖</p>
+      <button id="whack-start-btn" class="cta-btn">Start 🔨</button>
+    </div>
+    <div id="whack-end" class="rps-end hidden">
+      <p id="whack-end-msg"></p>
+      <button id="whack-forgive-btn" class="cta-btn">Forgive me? 💖</button>
+      <button class="back-btn" id="whack-back">Try another game</button>
+    </div>
+    <button class="back-btn" id="whack-back-top">← Back to games</button>
+  </div>
+</div>
+
+<!-- ── SCREEN 5: Thank You ── -->
+<div id="screen-thankyou" class="screen">
+  <div class="ty-card glass">
+    <div id="pixel-art-wrap">
+      <canvas id="pixel-canvas" width="320" height="280"></canvas>
+    </div>
+    <h1 id="ty-title">Thank you 💖</h1>
+    <p id="ty-msg">You have no idea how happy you just made me…<br/>I promise to never mess up again. 🌹</p>
+    <div id="ty-hearts" class="ty-hearts-burst"></div>
+  </div>
+</div>
+
+<!-- JS Modules (load order matters) -->
+<script src="js/navigation.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/spinner.js"></script>
+<script src="js/repel.js"></script>
+<script src="js/forgive.js"></script>
+<script src="js/thankyou.js"></script>
+<script src="js/games/gameHub.js"></script>
+<script src="js/games/flappy.js"></script>
+<script src="js/games/rps.js"></script>
+<script src="js/games/whack.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

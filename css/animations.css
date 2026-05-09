@@ -1,0 +1,48 @@
+/* ═══════════════════════════════
+   KEYFRAME ANIMATIONS
+═══════════════════════════════ */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  30%       { transform: scale(1.15); }
+  60%       { transform: scale(1.05); }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+  50%       { box-shadow: 0 4px 40px var(--accent), 0 0 60px var(--accent2); }
+}
+
+@keyframes shake-anim {
+  0%,100%{ transform: rotate(0deg); }
+  20%    { transform: rotate(-15deg); }
+  40%    { transform: rotate(15deg); }
+  60%    { transform: rotate(-10deg); }
+  80%    { transform: rotate(10deg); }
+}
+
+@keyframes pop-in {
+  0%   { transform: scale(0); opacity: 0; }
+  70%  { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@keyframes heart-fly {
+  0%   { transform: translateY(0) scale(0.5); opacity: 1; }
+  100% { transform: translateY(-130px) scale(1.6); opacity: 0; }
+}
+
+.heart-fly {
+  animation: heart-fly 1.4s ease forwards;
+  display: inline-block;
+}

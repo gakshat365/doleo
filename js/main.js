@@ -17,7 +17,7 @@
   // 4. "Continue" button → forgive screen
   document.getElementById('btn-choose-theme').addEventListener('click', () => {
     showScreen('screen-forgive');
-    resetForgiveScreen();
+    onForgiveScreenShown();
   });
 
   // 5. Forgiveness screen interactions

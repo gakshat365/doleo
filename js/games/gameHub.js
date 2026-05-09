@@ -64,8 +64,11 @@ function _updateGameButtons() {
 function _returnToHub() {
   showScreen('screen-games');
   if (allGamesPlayed()) {
-    // Short delay so the hub flashes briefly before repel kicks in
-    setTimeout(() => activateRepelMode(), 600);
+    // Short delay so the hub flashes briefly, then show forgive screen with repel
+    setTimeout(() => {
+      showScreen('screen-forgive');
+      onForgiveScreenShown();
+    }, 800);
   }
 }
 

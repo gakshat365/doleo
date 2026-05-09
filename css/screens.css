@@ -244,6 +244,38 @@
 .rps-result { font-size: 1.2rem; font-weight: 700; color: var(--accent); min-height: 1.6em; margin-bottom: 6px; }
 .rps-cheeky { font-size: 0.9rem; color: var(--text-muted); font-style: italic; min-height: 1.4em; margin-bottom: 20px; }
 .rps-btn-row { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+.rps-end-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  width: 100%;
+}
+.rps-replay-btn {
+  padding: 12px 28px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition);
+  width: 100%;
+  max-width: 240px;
+}
+.rps-replay-btn:hover {
+  background: rgba(255,255,255,0.06);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.2);
+}
+.rps-goback-btn {
+  opacity: 0.7;
+  font-size: 0.88rem;
+}
+.rps-goback-btn:hover { opacity: 1; }
 .rps-pick-btn {
   padding: 14px 18px;
   border-radius: var(--radius-sm);

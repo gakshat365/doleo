@@ -83,8 +83,17 @@ function startRPS() {
             document.getElementById('rps-end-msg').textContent =
               `Final: You ${userW} – Me ${cpuW}. Told ya I'd win 😈`;
             recordGamePlayed();
-            markGamePlayed('rps'); // mark as played so hub can track
-            wirePostGame('rps-forgive-btn', 'rps-back');
+            markGamePlayed('rps');
+
+            // Wire end-screen buttons
+            document.getElementById('rps-forgive-btn').onclick = () => showThankyou();
+
+            document.getElementById('rps-replay-btn').onclick = () => startRPS();
+
+            document.getElementById('rps-goback-btn').onclick = () => {
+              lockGame('rps'); // applies strikethrough on hub button
+              _returnToHub();
+            };
           }, 700);
         }
       };
@@ -92,7 +101,7 @@ function startRPS() {
   }
 
   pickHandlers();
-  // Back (top) → LOCK this game + return to hub
+  // Back (top, mid-game) → LOCK this game + return to hub
   document.getElementById('rps-back-top').onclick = () => {
     lockGame('rps');
     _returnToHub();
